@@ -428,21 +428,33 @@ if trades:
 
     with tab1:
         pnl_data = []
-        running_pnl = 0
+        running_cash = 10000.0
+        held_crypto = 0.0
         for trade in trades:
+            trade_usd_value = trade.get("usd_value", 0)
+            trade_amount = trade.get("amount", 0)
+            trade_price = trade.get("price", 0)
+            
             if trade.get("action") == "BUY":
-                running_pnl -= trade.get("usd_value", 0)
+                running_cash -= trade_usd_value
+                held_crypto += trade_amount
             elif trade.get("action") in ["SELL", "CLOSE"]:
-                running_pnl += trade.get("usd_value", 0)
+                running_cash += trade_usd_value
+                held_crypto -= trade_amount
+            
+            current_value = running_cash + (held_crypto * trade_price)
+            total_pnl = current_value - 10000
+            
             pnl_data.append({
                 "timestamp": trade.get("timestamp", ""),
-                "pnl": running_pnl
+                "pnl": total_pnl
             })
 
         if pnl_data:
             df_pnl = pd.DataFrame(pnl_data)
             
-            is_positive = running_pnl >= 0
+            final_pnl = pnl_data[-1]["pnl"]
+            is_positive = final_pnl >= 0
             line_color = "#00ff88" if is_positive else "#ff4444"
             fill_color = "rgba(0, 255, 136, 0.1)" if is_positive else "rgba(255, 68, 68, 0.1)"
 

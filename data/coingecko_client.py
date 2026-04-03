@@ -33,7 +33,7 @@ def get_price(symbol="BTC"):
             "include_24hr_vol": "true",
             "include_market_cap": "true"
         }
-        response = requests.get(url, params=params, timeout=10)
+        response = requests.get(url, params=params, timeout=30)
         response.raise_for_status()
         data = response.json()
 
