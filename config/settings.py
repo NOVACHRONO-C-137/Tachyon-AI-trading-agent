@@ -13,7 +13,7 @@ DATA_SOURCE = "coingecko"
 
 # TRADING
 TRADING_PAIR = "BTC/USD"
-CHECK_INTERVAL = 900    # 15 minutes
+CHECK_INTERVAL = 30  # Changed from 0.5minute
 
 # RISK MANAGEMENT
 MAX_TRADE_USD = 100

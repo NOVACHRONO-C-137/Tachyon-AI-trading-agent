@@ -229,9 +229,9 @@ def get_combined_signal(symbol="BTC"):
     combined_score = round(combined_score)
     combined_score = max(-100, min(100, combined_score))
 
-    if combined_score >= 60:
+    if combined_score >= 10:
         action = "BUY"
-    elif combined_score <= -60:
+    elif combined_score <= -10:
         action = "SELL"
     else:
         action = "HOLD"

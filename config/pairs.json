@@ -7,10 +7,16 @@
             "enabled": true
         },
         {
-            "symbol": "ETH",
-            "pair": "ETH/USD",
-            "kraken_pair": "ETHUSD",
-            "enabled": false
+            "symbol": "SOL",
+            "pair": "SOL/USD",
+            "kraken_pair": "SOLUSD",
+            "enabled": true
+        },
+        {
+            "symbol": "DOGE",
+            "pair": "DOGE/USD",
+            "kraken_pair": "XDGUSD",
+            "enabled": true
         }
     ]
 }
