@@ -1,0 +1,16 @@
+{
+    "pairs": [
+        {
+            "symbol": "BTC",
+            "pair": "BTC/USD",
+            "kraken_pair": "XBTUSD",
+            "enabled": true
+        },
+        {
+            "symbol": "ETH",
+            "pair": "ETH/USD",
+            "kraken_pair": "ETHUSD",
+            "enabled": false
+        }
+    ]
+}

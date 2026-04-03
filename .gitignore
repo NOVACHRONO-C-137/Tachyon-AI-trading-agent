@@ -1,0 +1,27 @@
+# API Keys
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.venv/
+
+# Logs
+logs/*.log
+logs/*.json
+!logs/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+.kilocode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+dist/
