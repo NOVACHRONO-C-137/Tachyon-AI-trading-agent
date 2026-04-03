@@ -7,8 +7,11 @@ def get_default_state():
     return {
         "open_positions": [],
         "total_trades": 0,
+        "closed_trades": 0,
         "total_pnl": 0.0,
+        "daily_pnl": 0.0,
         "daily_loss": 0.0,
+        "balance": 10000.00,
         "last_check_time": None,
         "is_running": True
     }
@@ -23,3 +26,8 @@ def load_state():
         with open(STATE_FILE, "r") as f:
             return json.load(f)
     return get_default_state()
+
+def reset_state():
+    state = get_default_state()
+    save_state(state)
+    return state
